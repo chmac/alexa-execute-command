@@ -30,7 +30,6 @@ server.all("/", async (request, reply) => {
   console.log("Request #lDH4ct", util.inspect(request.body, false, null));
   console.log("Command was #LUTewg", command);
 
-  // console.log("Returning fist round #2jJAjn");
   return {
     response: {
       outputSpeech: {
