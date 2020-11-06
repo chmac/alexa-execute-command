@@ -8,6 +8,7 @@
     "outDir": "./build",
     "lib": ["es2015", "es2017"]
   },
+  "files": ["src/**/*"],
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
