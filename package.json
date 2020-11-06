@@ -5,10 +5,13 @@
   "author": "Callum Macdonald",
   "license": "AGPL-3.0-or-later",
   "scripts": {
-    "start": "NODE_ENV='development' nodemon"
+    "start": "NODE_ENV='development' nodemon",
+    "build": "yarn build-ts",
+    "build-ts": "ncc build src/index.ts -o dist"
   },
   "devDependencies": {
     "@types/node": "^14.14.6",
+    "@vercel/ncc": "^0.25.1",
     "nodemon": "^2.0.6",
     "ts-node": "^9.0.0",
     "typescript": "^3.6.4"
