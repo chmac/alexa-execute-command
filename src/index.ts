@@ -40,13 +40,23 @@ const opts: RouteShorthandOptions = {
   },
 };
 
+const getCommand = (request: any): string | undefined => {
+  try {
+    const command = request.body.request.intent.slots.commandSlot.value;
+    if (typeof command !== "string") {
+      throw new Error("Could not find command #FTkNHY");
+    }
+    return command;
+  } catch (error) {
+    return;
+  }
+};
+
 // server.all("/", opts, async (request, reply) => {
 server.all("/", async (request, reply) => {
+  const command = getCommand(request);
   console.log("Request #lDH4ct", util.inspect(request.body, false, null));
-  console.log(
-    "Command was #LUTewg",
-    (request.body as any).request.intent.slots.commandSlot.value
-  );
+  console.log("Command was #LUTewg", command);
 
   // console.log("Returning fist round #2jJAjn");
   return {
