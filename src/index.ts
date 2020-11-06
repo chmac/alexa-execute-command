@@ -57,7 +57,6 @@ server.all("/", async (request, reply) => {
       },
     },
   };
-  return { pong: "it worked!" };
 });
 
 const start = async () => {
