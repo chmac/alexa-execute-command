@@ -12,34 +12,6 @@ const PORT = getPort();
 
 const server: FastifyInstance = Fastify({});
 
-const opts: RouteShorthandOptions = {
-  schema: {
-    response: {
-      200: {
-        type: "object",
-        properties: {
-          response: {
-            type: "object",
-            properties: {
-              outputSpeech: {
-                type: "object",
-                properties: {
-                  type: {
-                    type: "string",
-                  },
-                  text: {
-                    type: "string",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-};
-
 const getCommand = (request: any): string | undefined => {
   try {
     const command = request.body.request.intent.slots.commandSlot.value;
